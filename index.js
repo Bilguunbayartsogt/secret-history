@@ -11,12 +11,21 @@ function change(i) {
     .catch(error => console.error('Error fetching chapter.md:', error));
 }
 
+function scrollTop() {
+    window.scroll({
+        top: 1, 
+        left: 1, 
+        behavior: "smooth"
+    })
+}
+
 for (let i = 1; i <= 12; i++) {
     const chapterLinkId = 'chapter' + i + '-link';
     document.getElementById(chapterLinkId).addEventListener('click', function(event) {
         event.preventDefault();
         change(i);
         onNavToggle();
+        scrollTop();
     });
 }
 
