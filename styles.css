@@ -112,7 +112,29 @@
   }
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 750px) {
+  #content {
+    margin: 50px 0 0 0;
+    min-width: 100vw;
+  }
+
+  #drop-nav {
+    display: flex;
+  }
+  #drop-nav:hover {
+    cursor: pointer;
+  }
+  #navbar {
+    display: none;
+  }
+  #discuss {
+    width: 100%;
+    position: relative;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-device-width: 767px) {
     #discuss {
         width: 100%; 
         position:relative;
@@ -121,7 +143,27 @@
 
     #content {
         margin-right: 0;
-        max-width: 100vw;
+        margin-top: 8vh;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        max-width: 100%;
         min-width: none;
+    }
+
+    #header {
+        height: 8vh;
+        font-size: 40px;
+    }
+
+    #drop-nav {
+        width: 5vw;
+        height: 3vh;
+        left: 3%;
+    }
+
+    #navbar {
+        width: 60%;
+        margin-top: 8vh;
+        font-size: 3rem;
     }
 }
