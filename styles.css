@@ -82,6 +82,10 @@
 }
 
 #content p {
+    padding-left: 65px;
+}
+
+#content ol p {
     padding: 5px;
 }
 
@@ -94,6 +98,12 @@
     margin-right: 10px;
     padding: 10px;
 }
+
+#content pre {
+    text-wrap:wrap;
+    margin-left: 50px;
+}
+
 
 @media screen and (max-width: 1000px) {
   #content {
