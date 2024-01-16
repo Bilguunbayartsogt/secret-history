@@ -29,22 +29,27 @@ for (let i = 1; i <= 12; i++) {
     });
 }
 
-function screenChange() {
-    if (window.innerWidth <= 1000) {
-        document.getElementById('navbar').style.display = 'none';
-        document.getElementById('content').style.maxWidth = 'calc(100vw - 300px)';
-    } else {
-        document.getElementById('navbar').style.display = 'block';
-        document.getElementById('content').style.maxWidth = 'calc(100vw - 500px)';
-    }
-}
-screenChange();
-window.addEventListener('resize', screenChange);
+//navigation bar toggle function and reponsiveness to smaller screens;
 
 const dropNav = document.getElementById('drop-nav');
 const navBar = document.getElementById('navbar');
+const content = document.getElementById('content');
+const discuss = document.getElementById('discuss');
+const container = document.getElementById('container');
 let isDropNavClicked = false; 
-dropNav.addEventListener('click', onNavToggle)
+
+function screenChange() {
+    if (window.innerWidth <= 1000) {
+        navBar.style.display = 'none';
+    } else {
+        navBar.style.display = 'block';
+        // content.style.maxWidth = 'calc(100vw - 500px)';
+    }
+}
+screenChange();
+
+window.addEventListener('resize', screenChange);
+dropNav.addEventListener('click', onNavToggle);
 
 function onNavToggle() {
     isDropNavClicked = !isDropNavClicked;
