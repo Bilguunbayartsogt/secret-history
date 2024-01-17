@@ -27,6 +27,7 @@
     margin-top: 50px;
     background-color: whitesmoke;
     overflow: scroll;
+    z-index: 999;
 }
 
 #drop-nav {
