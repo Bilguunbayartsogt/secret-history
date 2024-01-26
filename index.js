@@ -29,6 +29,7 @@ for (let i = 1; i <= 12; i++) {
     });
 }
 
+
 //navigation bar toggle function and reponsiveness to smaller screens;
 
 const dropNav = document.getElementById('drop-nav');
@@ -57,3 +58,31 @@ function onNavToggle() {
         isDropNavClicked ? navBar.style.display = 'block' : navBar.style.display = 'none';
     }
 }
+
+
+// firebase 
+// config
+// for 
+// database
+
+// Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBC8PJ899bA0VwZphlHfVzPCbOWEUUwa7Q",
+            authDomain: "secret-history.firebaseapp.com",
+            projectId: "secret-history",
+            storageBucket: "secret-history.appspot.com",
+            messagingSenderId: "151428978439",
+            appId: "1:151428978439:web:d852f35ad0d264a16d97a2",
+            measurementId: "G-X366NF5WG1"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
