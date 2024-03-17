@@ -24,40 +24,46 @@ for (let i = 1; i <= 12; i++) {
     document.getElementById(chapterLinkId).addEventListener('click', function(event) {
         event.preventDefault();
         change(i);
-        onNavToggle();
         scrollTop();
     });
 }
 
+const nav_bar = document.getElementById('navbar');
+let isScreenSmall = true; 
 
-//navigation bar toggle function and reponsiveness to smaller screens;
-
-const dropNav = document.getElementById('drop-nav');
-const navBar = document.getElementById('navbar');
-const content = document.getElementById('content');
-const discuss = document.getElementById('discuss');
-const container = document.getElementById('container');
-let isDropNavClicked = false; 
-
-function screenChange() {
-    if (window.innerWidth <= 1000) {
-        navBar.style.display = 'none';
-    } else {
-        navBar.style.display = 'block';
-        // content.style.maxWidth = 'calc(100vw - 500px)';
-    }
+function toggleClassBasedOnScreenSize() {
+    isScreenSmall = window.matchMedia("(max-width: 730px)").matches;
+    nav_bar.classList.toggle("hidden", isScreenSmall);
 }
-screenChange();
 
-window.addEventListener('resize', screenChange);
-dropNav.addEventListener('click', onNavToggle);
+toggleClassBasedOnScreenSize();
 
-function onNavToggle() {
-    isDropNavClicked = !isDropNavClicked;
-    if (window.innerWidth <= 1000) {
-        isDropNavClicked ? navBar.style.display = 'block' : navBar.style.display = 'none';
+window.addEventListener("resize", function() {
+    toggleClassBasedOnScreenSize();
+});
+
+
+const menu_btn = document.getElementById('menu-btn');
+menu_btn.addEventListener('click', () => {
+    if (isScreenSmall) {
+        nav_bar.classList.toggle('hidden');
     }
+})
+
+const chapter_link = document.getElementsByClassName('chapter-link');
+
+for (let i = 0; i < chapter_link.length; i++) {
+    chapter_link[i].addEventListener('click', () => {
+        if (isScreenSmall) {
+            nav_bar.classList.toggle('hidden');
+        }
+    })
 }
+
+
+
+
+
 
 
 // firebase 
